@@ -1,0 +1,10 @@
+# KiCad temporary files
+*.lck
+.history/
+
+# VS Code
+.vscode/
+
+# OS junk
+.DS_Store
+Thumbs.db
