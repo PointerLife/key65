@@ -1,10 +1,15 @@
-# KiCad temporary files
-*.lck
-.history/
+# KiCad
+**/.history/
+**/*.lck
+**/~*
+fp-info-cache
 
-# VS Code
-.vscode/
+# Build outputs
+*.o
+*.d
+*.map
 
-# OS junk
+# OS/editor
 .DS_Store
 Thumbs.db
+.vscode/
