@@ -9,7 +9,7 @@
 </p>
 
 <p align="center">
-  <b>RP2040</b> · <b>MX-compatible switches</b> · <b>Rotary encoder</b> · <b>Custom PCB</b>
+  <b>RP2040</b> · <b>MX-compatible switches</b> · <b>Custom PCB</b>
 </p>
 
 ---
@@ -31,31 +31,18 @@ The goal was to understand the complete process of building a mechanical keyboar
 * MX-compatible mechanical switches
 * Diode-per-switch matrix
 * Custom-designed PCB
-* Rotary encoder / knob
 * USB connectivity
 * Programmable keymap
-* Custom plate
+* Custom platei
 * Open-source hardware and firmware
 
 ---
 
 ## Layout
 
-```text
-┌─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────────┐
-│ Esc │  1  │  2  │  3  │  4  │  5  │  6  │  7  │  8  │  9  │  0  │  -  │   Back  │
-├─────┴─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────────┤
-│   Tab     │  Q  │  W  │  E  │  R  │  T  │  Y  │  U  │  I  │  O  │  P  │   [ ]   │
-├───────────┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴─────────┤
-│    Caps     │  A  │  S  │  D  │  F  │  G  │  H  │  J  │  K  │  L  │  ;  │    '    │
-├─────────────┴─┬───┴──┬───┴──┬───┴──┬───┴──┬───┴──┬───┴──┬───┴──┬───┴──┬──────────┤
-│     Shift     │  Z  │  X  │  C  │  V  │  B  │  N  │  M  │  ,  │  .  │   Shift  │
-├───────┬───────┴──┬───┴───┬──┴──────┴──────┴──────┴───┬───┴──────┴───────┬────────┤
-│ Ctrl  │   Win    │  Alt  │            Space            │  Fn / Menu       │  Knob  │
-└───────┴──────────┴───────┴─────────────────────────────┴───────────────────┴────────┘
-```
-
----
+<p align="center">
+  <img src="docs/images/layout.png" alt="KEY65 layout" width="800">
+</p>
 
 ## Hardware
 
@@ -63,26 +50,6 @@ The goal was to understand the complete process of building a mechanical keyboar
 
 The keyboard uses an **RP2040** microcontroller.
 
-### Key Matrix
-
-Each key uses a diode and is arranged in a row/column matrix.
-
-The matrix is scanned by driving the rows and reading the columns.
-
-```text
-Rows
- R0 ──●──●──●──●──●
-      │  │  │  │  │
-     [K][K][K][K][K]
-      │  │  │  │  │
- C0 ──┴──┴──┴──┴──┴──
- C1 ─────────────────
- C2 ─────────────────
-```
-
-Each switch has its own diode to prevent unwanted electrical paths during matrix scanning.
-
----
 
 ## PCB
 
@@ -111,7 +78,8 @@ Gerber files are included so the PCB can be manufactured directly.
 ## Schematic
 
 <p align="center">
-  <img src="docs/images/key65-schematic.png" alt="KEY65 schematic" width="800">
+  <img src="docs/images/schemantic.png" alt="KEY65 schematic" width="800">
+  <img src="docs/images/pcb-design.svg" alt="KEY65 schematic" width="800">
 </p>
 
 The schematic contains:
@@ -128,7 +96,9 @@ The schematic contains:
 ## 3D Design
 
 <p align="center">
-  <img src="docs/images/key65-3d.png" alt="KEY65 3D render" width="800">
+  <img src="docs/images/frontcase.png" alt="KEY65 3D render" width="800">
+  <img src="docs/images/frontcase2.png" alt="KEY65 3D render" width="800">
+  <img src="docs/images/backcase.png" alt="KEY65 3D render" width="800">
 </p>
 
 A 3D model/render of the PCB and keyboard assembly is included for reference.
@@ -193,7 +163,7 @@ key65/
 ├── hardware/       # KiCad schematic, PCB and manufacturing files
 ├── plate/          # Plate design
 ├── docs/            # Documentation and images
-├── bom/             # Bill of materials
+├── bom.csv             # Bill of materials
 ├── README.md
 └── LICENSE
 ```
